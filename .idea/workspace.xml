@@ -4,83 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84ff1996-0cb9-4b1b-9b9a-e3efba863bbe" name="Changes" comment="second commit">
-      <change beforePath="$PROJECT_DIR$/target/classes/Report/citro.jrxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/108468102-bundle-of-linen-rope-in-a-market-place.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/3259111.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/Gold Luxury Initial Circle Logo (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/HD pic.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/crystalweed-cannabis-rLR4smahG2Q-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/delete.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/img_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/istockphoto-1286588476-612x612.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/istockphoto-1490581938-612x612.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/kadarius-seegars-0FHNXqyqgg4-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/kadarius-seegars-4XA5kdch2pk-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/save.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/asserts/update.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/Launcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/LauncherWrapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/Util/Regex$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/Util/Regex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/Util/TextField.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/CustomerFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/DashboardFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/EmployeeFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/ItemFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/LoginFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/MachineFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/MaterialFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/PlaceOrderFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/RegisterFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/SupplierFormController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/db/DbConnection.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/Employee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/Machine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/Material.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/OrderDetail.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/PlaceOrder.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/Supplier.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/tm/CartTm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/tm/CustomerTm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/tm/EmployeeTm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/tm/ItemTm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/tm/MachineTm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/tm/MaterialTm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/model/tm/SupplierTm.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/CustomerRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/EmployeeRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/ItemRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/MachineRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/MaterialRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/OrderDetailRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/OrderRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/PlaceOrderRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/SupplierRepo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/Placeorder_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/customer_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/dashboard_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/employee_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/item_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/login_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/machine_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/material_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/register_form.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/view/supplier_form.fxml" beforeDir="false" />
-    </list>
+    <list default="true" id="84ff1996-0cb9-4b1b-9b9a-e3efba863bbe" name="Changes" comment="second commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,9 +25,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "new",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Asus/Desktop/javafx73/Citro-essentional-oil-oilmart",
     "node.js.detected.package.eslint": "true",
@@ -142,7 +68,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1749189898862</updated>
-      <workItem from="1749189900451" duration="1077000" />
+      <workItem from="1749189900451" duration="1459000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <option name="closed" value="true" />
