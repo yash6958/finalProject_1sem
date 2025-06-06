@@ -1,7 +1,6 @@
 package lk.ijse.citroessentional.repository;
 
 import lk.ijse.citroessentional.db.DbConnection;
-import lk.ijse.citroessentional.model.Customer;
 import lk.ijse.citroessentional.model.Supplier;
 
 import java.sql.Connection;
@@ -11,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SupplierRepo {
+public class SupplierModel {
     public static boolean save(Supplier supplier) throws SQLException {
 
         String sql = "INSERT INTO supplier VALUES(?, ?, ?)";

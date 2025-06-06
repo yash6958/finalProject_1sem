@@ -15,10 +15,10 @@ import javafx.stage.Stage;
 import lk.ijse.citroessentional.Util.Regex;
 import lk.ijse.citroessentional.model.*;
 import lk.ijse.citroessentional.model.tm.CartTm;
-import lk.ijse.citroessentional.repository.CustomerRepo;
-import lk.ijse.citroessentional.repository.ItemRepo;
-import lk.ijse.citroessentional.repository.OrderRepo;
-import lk.ijse.citroessentional.repository.PlaceOrderRepo;
+import lk.ijse.citroessentional.repository.CustomerModel;
+import lk.ijse.citroessentional.repository.ItemModel;
+import lk.ijse.citroessentional.repository.OrderModel;
+import lk.ijse.citroessentional.repository.PlaceOrderModel;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -27,7 +27,6 @@ import net.sf.jasperreports.view.JasperViewer;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -111,7 +110,7 @@ public class PlaceOrderFormController {
     private void getItemCodes() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
-            List<String> codeList = ItemRepo.getId();
+            List<String> codeList = ItemModel.getId();
             for (String code : codeList) {
                 obList.add(code);
             }
@@ -128,7 +127,7 @@ public class PlaceOrderFormController {
         ObservableList<String> obList = FXCollections.observableArrayList();
 
         try {
-            List<String> idList = CustomerRepo.getId();
+            List<String> idList = CustomerModel.getId();
 
             for (String id : idList) {
                 obList.add(id);
@@ -248,7 +247,7 @@ public class PlaceOrderFormController {
 
         if (isValid()) {
             try {
-                boolean isPlaced = PlaceOrderRepo.placeOrder(po);
+                boolean isPlaced = PlaceOrderModel.placeOrder(po);
                 if (isPlaced) {
                     new Alert(Alert.AlertType.CONFIRMATION, "order placed!").show();
                 } else {
@@ -269,7 +268,7 @@ public class PlaceOrderFormController {
         Order order = new Order(id,date,cusId);
 
         try {
-            boolean isUpdated = OrderRepo.update(order);
+            boolean isUpdated = OrderModel.update(order);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "order updated!").show();
             }
@@ -284,7 +283,7 @@ public class PlaceOrderFormController {
 
 
         try {
-            Customer customer = CustomerRepo.searchById(cusId);
+            Customer customer = CustomerModel.searchById(cusId);
 
             lblCusName.setText(customer.getName());
 
@@ -297,7 +296,7 @@ public class PlaceOrderFormController {
     void cmbItemIDOnAction(ActionEvent event) {
         String itemId =  cmbItemId.getValue();
         try {
-            Item item = ItemRepo.searchById(itemId);
+            Item item = ItemModel.searchById(itemId);
             if (item != null) {
                 lblUnitPrice.setText(String.valueOf(item.getPrice()));
             }

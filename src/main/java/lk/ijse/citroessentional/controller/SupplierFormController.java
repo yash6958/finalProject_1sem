@@ -10,18 +10,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.citroessentional.Util.Regex;
-import lk.ijse.citroessentional.model.Customer;
 import lk.ijse.citroessentional.model.Supplier;
-import lk.ijse.citroessentional.model.tm.CustomerTm;
 import lk.ijse.citroessentional.model.tm.SupplierTm;
-import lk.ijse.citroessentional.repository.CustomerRepo;
-import lk.ijse.citroessentional.repository.SupplierRepo;
+import lk.ijse.citroessentional.repository.SupplierModel;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -88,7 +84,7 @@ public class SupplierFormController {
     private List<Supplier> getAllSupplier() {
         List<Supplier> suppierList = null;
         try {
-            suppierList = SupplierRepo.getAll();
+            suppierList = SupplierModel.getAll();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -105,7 +101,7 @@ public class SupplierFormController {
 
         if (isValid()) {
             try {
-                boolean isSaved = SupplierRepo.save(supplier);
+                boolean isSaved = SupplierModel.save(supplier);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "supplier saved!").show();
                 }
@@ -131,7 +127,7 @@ public class SupplierFormController {
         String id = txtId.getText();
 
         try {
-            boolean isDeleted = SupplierRepo.delete(id);
+            boolean isDeleted = SupplierModel.delete(id);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "supplier deleted!").show();
             }
@@ -152,7 +148,7 @@ public class SupplierFormController {
         Supplier supplier = new Supplier(id, name, tel);
 
         try {
-            boolean isUpdated = SupplierRepo.update(supplier);
+            boolean isUpdated = SupplierModel.update(supplier);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Supplier updated!").show();
             }
@@ -167,7 +163,7 @@ public class SupplierFormController {
         String id = txtId.getText();
 
         try {
-            Supplier supplier = SupplierRepo.searchById(id);
+            Supplier supplier = SupplierModel.searchById(id);
 
             if (supplier != null) {
                 txtId.setText(supplier.getId());

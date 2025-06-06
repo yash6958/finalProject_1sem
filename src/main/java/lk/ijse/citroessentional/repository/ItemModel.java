@@ -1,8 +1,6 @@
 package lk.ijse.citroessentional.repository;
 
 import lk.ijse.citroessentional.db.DbConnection;
-import lk.ijse.citroessentional.model.Customer;
-import lk.ijse.citroessentional.model.Employee;
 import lk.ijse.citroessentional.model.Item;
 import lk.ijse.citroessentional.model.OrderDetail;
 
@@ -13,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemRepo {
+public class ItemModel {
     public static boolean save(Item item)throws SQLException {
         String sql = "INSERT INTO product VALUES(?, ?, ?, ?)";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()

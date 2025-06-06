@@ -4,20 +4,19 @@ import lk.ijse.citroessentional.db.DbConnection;
 import lk.ijse.citroessentional.model.PlaceOrder;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class PlaceOrderRepo {
+public class PlaceOrderModel {
     public static boolean placeOrder(PlaceOrder po) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
         connection.setAutoCommit(false);
 
         try {
-            boolean isOrderSaved = OrderRepo.save(po.getOrder());
+            boolean isOrderSaved = OrderModel.save(po.getOrder());
             if (isOrderSaved) {
-                boolean isOrderDetailSaved = OrderDetailRepo.save(po.getOdList());
+                boolean isOrderDetailSaved = OrderDetailModel.save(po.getOdList());
                 if (isOrderDetailSaved) {
-                    boolean isItemQtyUpdate = ItemRepo.updateQty(po.getOdList());
+                    boolean isItemQtyUpdate = ItemModel.updateQty(po.getOdList());
                     if (isItemQtyUpdate) {
                         connection.commit();
                         return true;

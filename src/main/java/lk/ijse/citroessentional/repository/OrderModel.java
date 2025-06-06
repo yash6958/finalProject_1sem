@@ -3,12 +3,10 @@ package lk.ijse.citroessentional.repository;
 import lk.ijse.citroessentional.db.DbConnection;
 import lk.ijse.citroessentional.model.Order;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class OrderRepo {
+public class OrderModel {
     /*public static String currentId() throws SQLException {
         String sql = "SELECT orders_orderID FROM orders ORDER BY orders_orderID desc LIMIT 1";
 

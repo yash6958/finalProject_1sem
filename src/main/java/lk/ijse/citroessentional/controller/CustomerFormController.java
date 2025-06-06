@@ -17,14 +17,12 @@ import lk.ijse.citroessentional.Util.Regex;
 import lk.ijse.citroessentional.Util.TextField;
 import lk.ijse.citroessentional.model.Customer;
 import lk.ijse.citroessentional.model.tm.CustomerTm;
-import lk.ijse.citroessentional.repository.CustomerRepo;
+import lk.ijse.citroessentional.repository.CustomerModel;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static sun.security.krb5.internal.crypto.KeyUsage.isValid;
 
 //import static jdk.internal.agent.Agent.getText;
 
@@ -98,7 +96,7 @@ public class CustomerFormController {
     private List<Customer> getAllCustomers() {
         List<Customer> customerList = null;
         try {
-            customerList = CustomerRepo.getAll();
+            customerList = CustomerModel.getAll();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -117,7 +115,7 @@ public class CustomerFormController {
 
        if (isValid()) {
             try {
-                boolean isSaved = CustomerRepo.save(customer);
+                boolean isSaved = CustomerModel.save(customer);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
 
@@ -145,7 +143,7 @@ public class CustomerFormController {
         String id = txtId.getText();
 
         try {
-            boolean isDeleted = CustomerRepo.delete(id);
+            boolean isDeleted = CustomerModel.delete(id);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
             }
@@ -165,7 +163,7 @@ public class CustomerFormController {
         Customer customer = new Customer(id, name, tel,address);
 
         try {
-            boolean isUpdated = CustomerRepo.update(customer);
+            boolean isUpdated = CustomerModel.update(customer);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
             }
@@ -179,7 +177,7 @@ public class CustomerFormController {
         String id = txtId.getText();
 
         try {
-            Customer customer = CustomerRepo.searchById(id);
+            Customer customer = CustomerModel.searchById(id);
 
             if (customer != null) {
                 txtId.setText(customer.getId());

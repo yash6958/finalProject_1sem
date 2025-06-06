@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-public class OrderDetailRepo {
+public class OrderDetailModel {
     public static boolean save(List<OrderDetail> odList) throws SQLException {
         for (OrderDetail od : odList) {
             boolean isSave = save(od);

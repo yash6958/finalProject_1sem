@@ -1,8 +1,7 @@
 package lk.ijse.citroessentional.repository;
 
 import lk.ijse.citroessentional.db.DbConnection;
-import lk.ijse.citroessentional.model.Customer;
-import lk.ijse.citroessentional.model.Machine;
+import lk.ijse.citroessentional.model.Material;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,24 +10,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MachineRepo {
-    public static boolean save(Machine machine) throws SQLException {
-        String sql = "INSERT INTO machine VALUES(?, ?, ?,?)";
+public class MaterialModel {
+    public static boolean save(Material material) throws SQLException {
+        String sql = "INSERT INTO material VALUES(?, ?, ?, ?)";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
-        pstm.setObject(1, machine.getId());
-        pstm.setObject(2, machine.getName());
-        pstm.setObject(3, machine.getDesc());
-        pstm.setObject(4, machine.getProId());
-
+        pstm.setObject(1, material.getId());
+        pstm.setObject(2, material.getName());
+        pstm.setObject(3, material.getQty());
+        pstm.setObject(4, material.getPrice());
 
         return pstm.executeUpdate() > 0;
-
-    }
+        }
 
     public static boolean delete(String id) throws SQLException {
-        String sql = "DELETE FROM machine WHERE  machine_mashID = ?";
+        String sql = "DELETE FROM material WHERE material_MID = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
@@ -37,66 +34,65 @@ public class MachineRepo {
         return pstm.executeUpdate() > 0;
     }
 
-    public static boolean update(Machine machine) throws SQLException {
-        String sql = "UPDATE machine SET machine_machineName = ?, machine_machineDecs = ?, product_proID = ? WHERE machine_mashID = ?";
+    public static boolean update(Material material) throws SQLException {
+        String sql = "UPDATE material SET material_matDesc = ?, material_matQTY = ?, material_unitprice = ? WHERE material_MID = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
-        pstm.setObject(1, machine.getName());   // Corrected
-        pstm.setObject(2, machine.getDesc());   // Corrected
-        pstm.setObject(3, machine.getProId());  // Corrected
-        pstm.setObject(4, machine.getId());     // Corrected
+        pstm.setObject(1, material.getName());   // Description
+        pstm.setObject(2, material.getQty());    // Quantity
+        pstm.setObject(3, material.getPrice());  // Unit price
+        pstm.setObject(4, material.getId());     // ID (WHERE)
 
         return pstm.executeUpdate() > 0;
     }
 
 
-    public static Machine searchById(String id) throws SQLException {
-        String sql = "SELECT * FROM machine WHERE machine_mashID = ?";
+    public static Material searchById(String id) throws SQLException {
+        String sql = "SELECT * FROM material WHERE material_MID = ?";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
         pstm.setObject(1, id);
         ResultSet resultSet = pstm.executeQuery();
 
-        Machine machine = null;
+        Material material = null;
 
         if (resultSet.next()) {
-            String mash_id = resultSet.getString(1);
+            String mat_id = resultSet.getString(1);
             String name = resultSet.getString(2);
-            String desc = resultSet.getString(3);
-            String proId = resultSet.getString(4);
+            String qty = resultSet.getString(3);
+            String price = resultSet.getString(4);
 
-            machine = new Machine(mash_id, name, desc,proId);
+            material = new Material(mat_id, name, qty, price);
         }
-        return machine;
+        return material;
     }
 
-    public static List<Machine> getAll() throws SQLException {
-        String sql = "SELECT * FROM machine";
+    public static List<Material> getAll() throws SQLException {
+        String sql = "SELECT * FROM material";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
         ResultSet resultSet = pstm.executeQuery();
 
-        List<Machine> machineList = new ArrayList<>();
+        List<Material> materialList = new ArrayList<>();
         while (resultSet.next()) {
             String id = resultSet.getString(1);
             String name = resultSet.getString(2);
-            String desc = resultSet.getString(3);
-            String proId = resultSet.getString(4);
+            String qty = resultSet.getString(3);
+            String price = resultSet.getString(4);
 
-
-            Machine machine = new Machine(id, name, desc,proId);
-            machineList.add(machine);
+            Material material = new Material(id, name, qty, price);
+            materialList.add(material);
         }
-        return machineList;
+        return materialList;
     }
 
     public static List<String> getId() throws SQLException {
-        String sql = "SELECT machine_mashID  FROM machine";
+        String sql = "SELECT material_MID FROM material";
 
         Connection connection = DbConnection.getInstance().getConnection();
         ResultSet resultSet = connection.prepareStatement(sql).executeQuery();
@@ -107,6 +103,10 @@ public class MachineRepo {
             idList.add(resultSet.getString(1));
         }
         return idList;
+    }
+}
 
-}
-}
+
+
+
+

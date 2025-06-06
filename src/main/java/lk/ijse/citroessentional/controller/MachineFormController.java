@@ -13,14 +13,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.citroessentional.Util.Regex;
-import lk.ijse.citroessentional.model.Customer;
 import lk.ijse.citroessentional.model.Item;
 import lk.ijse.citroessentional.model.Machine;
-import lk.ijse.citroessentional.model.tm.CustomerTm;
 import lk.ijse.citroessentional.model.tm.MachineTm;
-import lk.ijse.citroessentional.repository.CustomerRepo;
-import lk.ijse.citroessentional.repository.ItemRepo;
-import lk.ijse.citroessentional.repository.MachineRepo;
+import lk.ijse.citroessentional.repository.ItemModel;
+import lk.ijse.citroessentional.repository.MachineModel;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -67,7 +64,7 @@ public class MachineFormController {
     }
 
     private void setComboBoxValue() throws SQLException {
-        List<Item> all = ItemRepo.getAll();
+        List<Item> all = ItemModel.getAll();
 
         ObservableList obList = FXCollections.observableArrayList();
         for (Item item :all) {
@@ -102,7 +99,7 @@ public class MachineFormController {
     private List<Machine> getAllMachine() {
         List<Machine> machineList = null;
         try {
-            machineList = MachineRepo.getAll();
+            machineList = MachineModel.getAll();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -121,7 +118,7 @@ public class MachineFormController {
 
         if (isValid()) {
             try {
-                boolean isSaved = MachineRepo.save(machine);
+                boolean isSaved = MachineModel.save(machine);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "machine saved!").show();
                 }
@@ -148,7 +145,7 @@ public class MachineFormController {
         String id = txtId.getText();
 
         try {
-            boolean isDeleted = MachineRepo.delete(id);
+            boolean isDeleted = MachineModel.delete(id);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "machine deleted!").show();
             }
@@ -169,7 +166,7 @@ public class MachineFormController {
         Machine machine = new Machine(id, name, desc,proId);
 
         try {
-            boolean isUpdated = MachineRepo.update(machine);
+            boolean isUpdated = MachineModel.update(machine);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "machine updated!").show();
             }
@@ -184,7 +181,7 @@ public class MachineFormController {
         String id = txtId.getText();
 
         try {
-            Machine machine = MachineRepo.searchById(id);
+            Machine machine = MachineModel.searchById(id);
 
             if (machine != null) {
                 txtId.setText(machine.getId());

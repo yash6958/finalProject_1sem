@@ -10,19 +10,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.citroessentional.Util.Regex;
-import lk.ijse.citroessentional.model.Customer;
 import lk.ijse.citroessentional.model.Material;
-import lk.ijse.citroessentional.model.tm.CustomerTm;
 import lk.ijse.citroessentional.model.tm.MaterialTm;
-import lk.ijse.citroessentional.repository.CustomerRepo;
-import lk.ijse.citroessentional.repository.MachineRepo;
-import lk.ijse.citroessentional.repository.MaterialRepo;
+import lk.ijse.citroessentional.repository.MaterialModel;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -97,7 +92,7 @@ public class MaterialFormController {
     private List<Material> getAllmaterial() {
         List<Material> materialList = null;
         try {
-            materialList = MaterialRepo.getAll();
+            materialList = MaterialModel.getAll();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -115,7 +110,7 @@ public class MaterialFormController {
 
         if (isValid()) {
             try {
-                boolean isSaved = MaterialRepo.save(material);
+                boolean isSaved = MaterialModel.save(material);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "material saved!").show();
                 }
@@ -141,7 +136,7 @@ public class MaterialFormController {
         String id = txtId.getText();
 
         try {
-            boolean isDeleted = MaterialRepo.delete(id);
+            boolean isDeleted = MaterialModel.delete(id);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "material deleted!").show();
             }
@@ -160,7 +155,7 @@ public class MaterialFormController {
         Material material = new Material(id, name, qty, price);
 
         try {
-            boolean isUpdated = MaterialRepo.update(material);
+            boolean isUpdated = MaterialModel.update(material);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "material updated!").show();
             }
@@ -174,7 +169,7 @@ public class MaterialFormController {
         String id = txtId.getText();
 
         try {
-            Material material = MaterialRepo.searchById(id);
+            Material material = MaterialModel.searchById(id);
 
             if (material != null) {
                 txtId.setText(material.getId());

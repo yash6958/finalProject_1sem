@@ -14,17 +14,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.citroessentional.Util.Regex;
-import lk.ijse.citroessentional.model.Customer;
 import lk.ijse.citroessentional.model.Employee;
 import lk.ijse.citroessentional.model.Machine;
-import lk.ijse.citroessentional.model.tm.CustomerTm;
 import lk.ijse.citroessentional.model.tm.EmployeeTm;
-import lk.ijse.citroessentional.repository.CustomerRepo;
-import lk.ijse.citroessentional.repository.EmployeeRepo;
-import lk.ijse.citroessentional.repository.MachineRepo;
+import lk.ijse.citroessentional.repository.EmployeeModel;
+import lk.ijse.citroessentional.repository.MachineModel;
 
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +71,7 @@ public class EmployeeFormController {
     }
 
     private void setComboBoxValue() throws SQLException {
-        List<Machine> all = MachineRepo.getAll();
+        List<Machine> all = MachineModel.getAll();
 
             ObservableList obList = FXCollections.observableArrayList();
         for (Machine machine :all) {
@@ -112,7 +108,7 @@ public class EmployeeFormController {
     private List<Employee> getAllemployee() {
         List<Employee> employeeList = null;
         try {
-            employeeList = EmployeeRepo.getAll();
+            employeeList = EmployeeModel.getAll();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -131,7 +127,7 @@ public class EmployeeFormController {
 
         if (isValid()) {
             try {
-                boolean isSaved = EmployeeRepo.save(employee);
+                boolean isSaved = EmployeeModel.save(employee);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "employee saved!").show();
                    // loadEmployeeTable();
@@ -158,7 +154,7 @@ public class EmployeeFormController {
         String id = txtId.getText();
 
         try {
-            boolean isDeleted = EmployeeRepo.delete(id);
+            boolean isDeleted = EmployeeModel.delete(id);
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "employee deleted!").show();
             }
@@ -178,7 +174,7 @@ public class EmployeeFormController {
         Employee employee = new Employee(id, name, address, tel,mashId);
 
         try {
-            boolean isUpdated = EmployeeRepo.update(employee);
+            boolean isUpdated = EmployeeModel.update(employee);
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "employee updated!").show();
             }
@@ -192,7 +188,7 @@ public class EmployeeFormController {
         String id = txtId.getText();
 
         try {
-            Employee employee = EmployeeRepo.searchById(id);
+            Employee employee = EmployeeModel.searchById(id);
 
             if (employee != null) {
                 txtId.setText(employee.getId());

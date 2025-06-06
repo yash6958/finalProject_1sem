@@ -1,6 +1,5 @@
 package lk.ijse.citroessentional.repository;
 import lk.ijse.citroessentional.db.DbConnection;
-import lk.ijse.citroessentional.model.Customer;
 import lk.ijse.citroessentional.model.Employee;
 
 import java.sql.Connection;
@@ -9,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-public class EmployeeRepo {
+public class EmployeeModel {
     public static boolean save(Employee employee)throws SQLException {
         String sql = "INSERT INTO employee VALUES(?, ?, ?, ?,?)";
         PreparedStatement pstm = DbConnection.getInstance().getConnection()

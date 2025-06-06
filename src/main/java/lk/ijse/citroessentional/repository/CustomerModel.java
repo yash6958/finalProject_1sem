@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerRepo {
+public class CustomerModel {
     public static boolean save(Customer customer) throws SQLException {
 //        In here you can now save your customer
         String sql = "INSERT INTO customer VALUES(?, ?, ?, ?)";
