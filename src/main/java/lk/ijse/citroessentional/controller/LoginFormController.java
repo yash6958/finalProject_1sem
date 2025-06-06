@@ -36,37 +36,37 @@ public class LoginFormController {
         String username = txtUserName.getText();
         String pw = txtPassword.getText();
         navigateToTheDashboard();
-//        if (isValid()) {
-//        try {
-//            checkCredential(username,pw);
-//        } catch (SQLException e) {
-//            navigateToTheDashboard();
-//
-////            new Alert(Alert.AlertType.ERROR, "OOPS! something went wrong").show();
-//        }
-//        }
+        if (isValid()) {
+        try {
+            checkCredential(username,pw);
+        } catch (SQLException e) {
+            navigateToTheDashboard();
+
+            new Alert(Alert.AlertType.ERROR, "OOPS! something went wrong").show();
+        }
+        }
     }
 
-//    private void checkCredential(String username, String pw) throws SQLException,IOException{
-//        String sql = "SELECT user_username, user_password FROM user WHERE user_username = ?";
-//
-//        Connection connection = DbConnection.getInstance().getConnection();
-//        PreparedStatement pstm = connection.prepareStatement(sql);
-//        pstm.setObject(1, username);
-//
-//        ResultSet resultSet = pstm.executeQuery();
-//        if(resultSet.next()) {
-//            String dbPw = resultSet.getString(2);
-//
-//            if(dbPw.equals(pw)) {
+    private void checkCredential(String username, String pw) throws SQLException,IOException{
+        String sql = "SELECT user_username, user_password FROM user WHERE user_username = ?";
+
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setObject(1, username);
+
+        ResultSet resultSet = pstm.executeQuery();
+        if(resultSet.next()) {
+            String dbPw = resultSet.getString(2);
+
+            if(dbPw.equals(pw)) {
 //                navigateToTheDashboard();
-//            } else {
-//                new Alert(Alert.AlertType.ERROR, "Password is incorrect!").show();
-//            }
-//        } else {
-//            new Alert(Alert.AlertType.INFORMATION, "user id not found!").show();
-//        }
-//    }
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Password is incorrect!").show();
+            }
+        } else {
+            new Alert(Alert.AlertType.INFORMATION, "user id not found!").show();
+        }
+    }
 
     private void navigateToTheDashboard() throws IOException {
         AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/dashboard_form.fxml"));

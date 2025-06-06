@@ -38,18 +38,19 @@ public class MachineRepo {
     }
 
     public static boolean update(Machine machine) throws SQLException {
-        String sql = "UPDATE machine SET  machine_machineName  = ?, machine_machineDecs = ?,product_proID =? WHERE machine_mashID  = ?";
+        String sql = "UPDATE machine SET machine_machineName = ?, machine_machineDecs = ?, product_proID = ? WHERE machine_mashID = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
-        pstm.setObject(1, machine.getId());
-        pstm.setObject(2, machine.getName());
-        pstm.setObject(3, machine.getDesc());
-        pstm.setObject(4, machine.getProId());
+        pstm.setObject(1, machine.getName());   // Corrected
+        pstm.setObject(2, machine.getDesc());   // Corrected
+        pstm.setObject(3, machine.getProId());  // Corrected
+        pstm.setObject(4, machine.getId());     // Corrected
 
         return pstm.executeUpdate() > 0;
     }
+
 
     public static Machine searchById(String id) throws SQLException {
         String sql = "SELECT * FROM machine WHERE machine_mashID = ?";

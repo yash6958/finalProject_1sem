@@ -4,17 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84ff1996-0cb9-4b1b-9b9a-e3efba863bbe" name="Changes" comment="second commit">
+    <list default="true" id="84ff1996-0cb9-4b1b-9b9a-e3efba863bbe" name="Changes" comment="fix uptade">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/controller/CustomerFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/controller/CustomerFormController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/CustomerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/CustomerRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/EmployeeRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/EmployeeRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/ItemRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/ItemRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/SupplierRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/SupplierRepo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/CustomerFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/CustomerFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/CustomerRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/CustomerRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/EmployeeRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/EmployeeRepo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/ItemRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/ItemRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/controller/LoginFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/controller/LoginFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/MachineRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/MachineRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/MaterialRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lk/ijse/citroessentional/repository/MaterialRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/LoginFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/controller/LoginFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/MachineRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/MachineRepo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/MaterialRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/lk/ijse/citroessentional/repository/MaterialRepo.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1749189898862</updated>
-      <workItem from="1749189900451" duration="3927000" />
+      <workItem from="1749189900451" duration="4716000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <option name="closed" value="true" />
@@ -109,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749191916150</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix uptade">
+      <option name="closed" value="true" />
+      <created>1749194302044</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1749194302044</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +122,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="second commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="second commit" />
+    <MESSAGE value="fix uptade" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix uptade" />
   </component>
 </project>
