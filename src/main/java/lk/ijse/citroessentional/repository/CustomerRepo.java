@@ -28,18 +28,19 @@ public class CustomerRepo {
     }
 
     public static boolean update(Customer customer) throws SQLException {
-        String sql = "UPDATE customer SET customer_name  = ?, customer_address = ?, customer_cusContactNO = ? WHERE customer_cusID = ?";
+        String sql = "UPDATE customer SET customer_name = ?, customer_address = ?, customer_cusContactNO = ? WHERE customer_cusID = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
-        pstm.setObject(1, customer.getId());
-        pstm.setObject(2, customer.getName());
-        pstm.setObject(3, customer.getTel());
-        pstm.setObject(4, customer.getAddress());
+        pstm.setObject(1, customer.getName());     // Corrected
+        pstm.setObject(2, customer.getAddress());  // Corrected
+        pstm.setObject(3, customer.getTel());      // Same
+        pstm.setObject(4, customer.getId());       // Corrected
 
         return pstm.executeUpdate() > 0;
     }
+
 
     public static Customer searchById(String id) throws SQLException {
         String sql = "SELECT * FROM customer WHERE customer_cusID = ?";

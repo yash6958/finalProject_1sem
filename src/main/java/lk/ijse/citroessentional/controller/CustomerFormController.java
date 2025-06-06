@@ -120,6 +120,8 @@ public class CustomerFormController {
                 boolean isSaved = CustomerRepo.save(customer);
                 if (isSaved) {
                     new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
+
+                    loadCustomerTable();
                 }
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

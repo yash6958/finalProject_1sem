@@ -27,19 +27,19 @@ public class EmployeeRepo {
     }
 
     public static boolean update(Employee employee) throws SQLException {
-        String sql = "UPDATE employee SET employee_name  = ?, employee_address  = ?,employee_contactNumber   = ? WHERE employee_empID  = ?";
+        String sql = "UPDATE employee SET employee_name = ?, employee_address = ?, employee_contactNumber = ? WHERE employee_empID = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
-        pstm.setObject(1, employee.getId());
-        pstm.setObject(2, employee.getName());
-        pstm.setObject(4, employee.getTel());
-        pstm.setObject(3, employee.getAddress());
-      //  pstm.setObject(5, employee.getMashId());
+        pstm.setObject(1, employee.getName());     // Correct
+        pstm.setObject(2, employee.getAddress());  // Correct
+        pstm.setObject(3, employee.getTel());      // Correct
+        pstm.setObject(4, employee.getId());       // Correct for WHERE clause
 
         return pstm.executeUpdate() > 0;
     }
+
 
     public static Employee searchById(String id) throws SQLException {
         String sql = "SELECT * FROM employee WHERE employee_empID = ?";

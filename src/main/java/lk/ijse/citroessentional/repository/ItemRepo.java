@@ -39,18 +39,19 @@ public class ItemRepo {
     }
 
     public static boolean update(Item item) throws SQLException {
-        String sql = "UPDATE product SET product_proname  = ?, product_price = ?, product_proQTY = ? WHERE product_proID = ?";
+        String sql = "UPDATE product SET product_proname = ?, product_price = ?, product_proQTY = ? WHERE product_proID = ?";
 
         PreparedStatement pstm = DbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
-        pstm.setObject(1, item.getId());
-        pstm.setObject(2, item.getName());
-        pstm.setObject(3, item.getPrice());
-        pstm.setObject(4, item.getQty());
+        pstm.setObject(1, item.getName());  // name
+        pstm.setObject(2, item.getPrice()); // price
+        pstm.setObject(3, item.getQty());   // quantity
+        pstm.setObject(4, item.getId());    // ID (for WHERE)
 
         return pstm.executeUpdate() > 0;
     }
+
 
     public static Item searchById(String id) throws SQLException{
         String sql = "SELECT * FROM product WHERE product_proID = ?";
